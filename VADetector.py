@@ -1,4 +1,4 @@
-from imports.mtcnn import MTCNN
+from mtcnn.mtcnn import MTCNN
 from imports.helpers import rect_to_bb, shape_to_np
 from imports.facealigner import FaceAligner
 import numpy as np
@@ -32,7 +32,7 @@ def init_session():
 class VADetector:
     def __init__(self):
         init_session()
-        path = '/home/omar/Projects/CSE/Image Processing/Dave/aff-wild keras/t15_affwild2_expr_va_image_weights_200222212717_epoch-29_loss-2.70_class-0.63_0.63_0.42_reg-0.02_0.03_0.05.h5'
+        path = './weights/t15_affwild2_expr_va_image_weights_200222212717_epoch-29_loss-2.70_class-0.63_0.63_0.42_reg-0.02_0.03_0.05.h5'
         self.model = load_model(path, custom_objects={
             'loss_ccc': loss_ccc, 'ccc': ccc, 'f1_score': f1_score, 'expr_score': expr_score})
         self.detector = MTCNN()
