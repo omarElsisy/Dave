@@ -1,0 +1,6 @@
+pip3 install keras
+pip3 install mtcnn
+pip3 install tensorflow==1.15
+sudo apt-get install -y dbus
+pip3 install opencv-python
+
